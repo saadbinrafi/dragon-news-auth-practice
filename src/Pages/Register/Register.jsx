@@ -6,16 +6,20 @@ const Register = () => {
 
     const handleRegister = (e) => {
         e.preventDefault();
-
-        
-        
         // const email = e.target.email.value;
         // const password = e.target.password.value;
         // oltarnetive system is
         console.log(e.currentTarget)
         const form = new FormData(e.currentTarget)
-        console.log(form.get('email'))
-        console.log(form.get('password'))
+
+
+
+        const name = form.get("name")
+        const photo = form.get("photo")
+        const email = form.get("email")
+        const password = form.get("password")
+        console.log(name, photo, email, password)
+
     }
 
 
@@ -58,7 +62,7 @@ const Register = () => {
                         <button className="btn btn-primary">Register</button>
                     </div>
                 </form>
-                <p className='text-center font-bold'>All Ready have an account  :  <Link to="/" className='text-yellow-400 hover:text-green-500'> Login.</Link> </p>
+                <p className='text-center font-bold'>All Ready have an account  :  <Link to="/login" className='text-yellow-400 hover:text-green-500'>Login</Link> </p>
             </div>
         </div>
     );

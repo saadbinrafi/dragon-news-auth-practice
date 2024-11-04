@@ -45,7 +45,7 @@ const Login = () => {
                         <button className="btn btn-primary">Login</button>
                     </div>
                 </form>
-                <p className='text-center font-bold'>Don't have an account : <Link to="/" className='text-yellow-400 hover:text-green-500'> Register</Link> </p>
+                <p className='text-center font-bold'>Don't have an account : <Link to="/register" className='text-yellow-400 hover:text-green-500'> Register</Link> </p>
             </div>
         </div>
     );
