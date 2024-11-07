@@ -1,14 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import NavBar from '../Pages/Shared/NavBar/NavBar';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../Provider/AuthProvider';
 
 const Login = () => {
+
+    const { signIn } = useContext(AuthContext)
 
     const handleLogin = (e) => {
         e.preventDefault();
 
-        
-        
+
+
         // const email = e.target.email.value;
         // const password = e.target.password.value;
         // oltarnetive system is
@@ -16,6 +19,15 @@ const Login = () => {
         const form = new FormData(e.currentTarget)
         console.log(form.get('email'))
         console.log(form.get('password'))
+        signIn(email, password)
+            .then(result => {
+                console.log(result.user)
+
+            })
+            .catch(error => {
+                console.error(error)
+            })
+
     }
 
 
